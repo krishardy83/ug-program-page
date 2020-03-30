@@ -29,8 +29,9 @@ $program_data = get_program_details($guid, 'array');
 if (isset($program_data->catalog->Degree)) {
     $case = 1;
 }
+
 if (isset($program_data->catalog->Minor)) {
-    $case = 1;
+    $case = 5;
 }
 
 if (isset($program_data->catalog->Certificate)) {
@@ -45,13 +46,16 @@ if (isset($program_data->catalog->Degree_Requirements)) {
 
 if ($case == 1) {
     $degree = $program_data->catalog->Degree;
-    $minor = $program_data->catalog->Minor;
     $program_title = $degree->title;
-    $minor_title = $minor->title;
     $content = $degree->content;
-    $minor_content = $minor->content;
     $requirements = $degree->Degree_Requirements;
-    $minor_requirements = $minor->Degree_Requirements;
+}
+
+if ($case == 5) {
+    $degree = $program_data->catalog->Minor;
+    $program_title = $degree->title;
+    $content = $degree->content;
+    $requirements = $degree->Degree_Requirements;
 }
 
 if ($case == 2) {
@@ -65,18 +69,11 @@ if ($case == 3) {
     $requirements = $certificate->Degree_Requirements;
 }
 
-if ($case == 1 || $case == 3 || $case == 4) {
+if ($case == 1 || $case == 3 || $case == 4 || $case == 5) {
     // Render content
-    // WHOLE RESULT FROM SMART CATALOG
-    if(empty($degree)){
-      print "<h2 class='tab-heading'>" . $minor_title . "</h2>";
-      print $minor_content;
-      display_degree_requirements($minor_requirements);
-    } else {
     print "<h2 class='tab-heading'>" . $program_title . "</h2>";
     print $content;
     display_degree_requirements($requirements);
-  }
 }
 
 
@@ -109,9 +106,7 @@ function display_degree_requirements($requirements)
 {
     if (count($requirements) > 1) {
         foreach ($requirements as $requirement) {
-            print "<div style='padding-bottom:20px';margin-bottom:20px>";
             process_requirement($requirement);
-            print "</div>";
         }
     } else {
         process_requirement($requirements);
@@ -139,6 +134,7 @@ function process_requirement($requirement) {
 
 function process_requirements_list ($requirements_list) {
     print "<h4>" . $requirements_list->title . "</h4>";
+
     $req_narrative  = $requirements_list->req_narrative;
     $req_note = $requirements_list->req_note;
 
@@ -151,10 +147,8 @@ function process_requirements_list ($requirements_list) {
     }
 
     if (isset($requirements_list->Course_List)) {
-
         $courses = $requirements_list->Course_List->course;
         display_courses($courses);
-
     }
 
     // check for nested Requirements_List
@@ -177,15 +171,12 @@ function process_requirements_list ($requirements_list) {
 
 function display_requirements($requirements_list)
 {
-
     $program_title = $requirements_list->title;
     $req_narrative  = $requirements_list->req_narrative;
     $req_note = $requirements_list->req_note;
 
     // Render content
-
     print "<h2 class='tab-heading'>" . $program_title . "</h2>";
-
     if (!empty($req_narrative)) {
         print $req_narrative;
     }
@@ -227,34 +218,35 @@ function display_courses($courses)
         if (!empty($course->subject_name . $course->subject_code)) {
             #$course_data = get_course_details($course->guid);
         } else {
-          // for non-Messiah courses we host for some reason
-          $c = $course;
-          $course = new StdClass();
-          $course->name = $c->name;
-          #$course_data->description = "No course description has been provided";
-          $course->subject_code = $c->number;
+            // for non-Messiah courses we host for some reason
+            $c = $course;
+            $course = new StdClass();
+            $course->name = $c->name;
+            $course_data->description = "No course description has been provided";
+            $course->subject_code = $c->number;
+
         }
         ?>
-
-        <?php if($course->name == "OR"){ ?>
+        <?php if (strtoupper($course->name) == "AND" || strtoupper($course->name) == "OR"){ ?>
         <div class='widget widget__grad-pages-accordion'>
             <div class='messiah-accordion'>
                 <h4><span class='btn-text'><?php print $course->name;?></h4>
             </div>
         </div>
-        <!-- HIDES Some other courses -->
-<?php } else if(!empty($course->subject_code) && !empty($course->name) ) { ?>
-  <div class='widget widget__grad-pages-accordion'>
-      <div class='messiah-accordion'>
-          <button class='accordion acc expand' id="<?php print $guid;?>"><span class='btn-text'><?php print $course->name;?></span></button>
-          <div class='panel'>
-              <p><div id="course-<?php print $guid;?>"></div></p>
-              <p><?php print $course->subject_code;?> <?php print $course->number;?> / <?php print $course->credits;?> Credits</p>
-          </div>
-      </div>
-  </div>
-<?php } ?>
 
+<!-- HIDE NO COURSE NAMES -->
+<?php } else if(strlen($course->name) > 3){?>
+        <div class='widget widget__grad-pages-accordion'>
+            <div class='messiah-accordion'>
+                <button class='accordion acc expand' id="<?php print $guid;?>"><span class='btn-text'><?php print $course->name;?></span></button>
+                <div class='panel'>
+                    <p><div id="course-<?php print $guid;?>"></div></p>
+                    <p><?php print $course->subject_code;?> <?php print $course->number;?> / <?php print $course->credits;?> Credits</p>
+                    <p><?php print $course_data->description; ?> </p>
+                </div>
+            </div>
+        </div>
+<?php } ?>
         <?php
     }
 }

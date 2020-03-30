@@ -946,7 +946,13 @@ window.onload = function() {
 
                             <!-- TAB: OVERVIEW -->
                             <div class="tabcontent-col-left">
-                                    [Dynamic Content Here]
+                              <div id="tabcontent-col-left">
+                              [Dynamic Content Here]
+                              </div>
+
+                              <!-- RELATED PROGRAMS -->
+                              <div id="peek-overlay" class="_peek-overlay">
+                              </div>
                             </div>
 
                             <!-- WHY MESSIAH -->
@@ -955,10 +961,6 @@ window.onload = function() {
                           </div>
 
 
-                            <!-- RELATED PROGRAMS -->
-
-                            <div id="peek-overlay" class="peek-overlay">
-                            </div>
 
                           <!--LEFT CONTENT END -->
                         </div>
@@ -1007,6 +1009,8 @@ window.onload = function() {
                               </a>
                           </div>
                       </div>
+                      <input type="hidden" id="program-id" value="<?php echo $entryID; ?>">
+
 
                       <!-- RIGHT COLUMN END -->
 
@@ -1015,6 +1019,50 @@ window.onload = function() {
             </div>
         </div>
     </div>
+
+    <script id="peek-template" type="text/x-jQuery-tmpl">
+        <div class="_peek">
+            <div id="peek-related" class="peek-related" style="display: none">
+                <h3 class="peek-subtitle">Programs related to</h3>
+                <h2 class="peek-title"><?php print $program_name; ?></h2>
+                <div class="peek-related-scroll">
+                    <div id="peek-related-programs" class="related-wrap">
+                    </div>
+                </div>
+                <div id="related-nav" class="related-nav" style="display: none">
+                    <a id="peek-nav-prev" class="peek-nav-button" ><img src="<?php echo $folder; ?>img/programs/peek-prev.png" /></a>
+                    <a id="peek-nav-next" class="peek-nav-button" ><img src="<?php echo $folder; ?>img/programs/peek-next.png" /></a>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <script id="peek-related-programs-template" type="text/x-jQuery-tmpl">
+        <div class="related-single open-subpeek" data-index="${index}">
+            <div class="single-img">
+                {{if (thumbnail_small == '') }}
+                <img src="//www.messiah.edu/site/custom_scripts/images/default_thumbnail.png"/>
+                {{else}}
+                <img src="//www.messiah.edu/images/${thumbnail_small}"/>
+                {{/if}}
+            </div>
+            <div class="info">
+                <h4>${program_name}</h4>
+                {{if ((major == 'Yes') || (major == 'yes')) }}<span class="major"><span class="badge"></span></span>{{/if}}
+                {{if ((minor == 'Yes') || (minor == 'yes')) }}<span class="minor"><span class="badge"></span></span>{{/if}}
+                {{if ((concentration == 'Yes') || (concentration == 'yes')) }}<span class="concentration"><span class="badge"></span></span>{{/if}}
+                {{if ((preprofessional_programs == 'Yes') || (preprofessional_programs == 'yes')) }}<span class="prepro"><span class="badge"></span></span>{{/if}}
+                {{if ((allied_program == 'Yes') || (allied_program == 'yes')) }}<span class="dual-degree"><span class="badge"></span></span>{{/if}}
+                {{if ((teaching_certification == 'Yes') || (teaching_certification == 'yes')) }}<span class="teaching"><span class="badge"></span></span>{{/if}}
+                {{if ((accelerated == 'Yes') || (accelerated == 'yes')) }}<span class="accelerated"><span class="badge"></span></span>{{/if}}
+                {{if ((early_assurance == 'Yes') || (early_assurance == 'yes')) }}<span class="assurance"><span class="badge"></span></span>{{/if}}
+            </div>
+            <div class="read-more">
+                <a href="https://www.messiah.edu/undergraduate/${url_slug}" target="_blank">Read more</a>
+            </div>
+        </div>
+    </script>
+
 
     <script id="programs-template" type="text/x-jQuery-tmpl">
         <tr class="program-line {{if (expanded) }}expanded{{/if}}">
@@ -1060,100 +1108,6 @@ window.onload = function() {
         <div id="autocomplete-item-${id}" class="auto-suggest" data-keyword="${keyword}"><span>${selection}</span>${rest}</div>
     </script>
     <?php } ?>
-
-    <script id="peek-template" type="text/x-jQuery-tmpl">
-        <div class="peek">
-            <div id="peek-close" class="peek-close">
-                <img src="<?php echo $folder; ?>img/programs/peek-close.png">
-            </div>
-            <div class="peek-img">
-                {{if thumbnail_peek != '' }}
-                <img id="peek-large-image" src="//www.messiah.edu/images/${thumbnail_peek}">
-                {{/if}}
-            </div>
-            <div class="peek-content">
-                <h2 class="peek-title">${program_name}
-                    {{each degree_types}}
-                    <span class="degree-type">${$value.name}</span>
-                    {{/each}}
-                </h2>
-                {{each categoryNames}}
-                <h3 class="peek-subtitle"><span class="peek-ball" style="display: none;"></span><span id="peek-category">Department of ${$value}</span></h3>
-                {{/each}}
-                <div class="badge-field">
-                    {{if ((major == 'Yes') || (major == 'yes')) }}<span class="major"><span class="badge"></span></span>{{/if}}
-                    {{if ((minor == 'Yes') || (minor == 'yes')) }}<span class="minor"><span class="badge"></span></span>{{/if}}
-                    {{if ((concentration == 'Yes') || (concentration == 'yes')) }}<span class="concentration"><span class="badge"></span></span>{{/if}}
-                    {{if ((preprofessional_programs == 'Yes') || (preprofessional_programs == 'yes')) }}<span class="prepro"><span class="badge"></span></span>{{/if}}
-                    {{if ((allied_program == 'Yes') || (allied_program == 'yes')) }}<span class="dual-degree"><span class="badge"></span></span>{{/if}}
-                    {{if ((teaching_certification == 'Yes') || (teaching_certification == 'yes')) }}<span class="teaching"><span class="badge"></span></span>{{/if}}
-                    {{if ((grad_concentration == 'Yes') || (grad_concentration == 'yes')) }}<span class="grad-c"><span class="badge"></span></span>{{/if}}
-                    {{if ((grad_track == 'Yes') || (grad_track == 'yes')) }}<span class="grad-t"><span class="badge"></span></span>{{/if}}
-                    {{if ((grad_pa_teaching_certification == 'Yes') || (grad_pa_teaching_certification == 'yes')) }}<span class="grad-p"><span class="badge"></span></span>{{/if}}
-                    {{if ((grad_grad_certificate == 'Yes') || (grad_grad_certificate == 'yes')) }}<span class="grad-g"><span class="badge"></span></span>{{/if}}
-                    {{if ((grad_nondegree == 'Yes') || (grad_nondegree == 'yes')) }}<span class="grad-n"><span class="badge"></span></span>{{/if}}
-                    {{if ((grad_certificate_in_advanced_graduate_studies == 'Yes') || (grad_certificate_in_advanced_graduate_studies == 'yes')) }}<span class="grad-a"><span class="badge"></span></span>{{/if}}
-                    <span class="bookmark-box" style="display: none;"><span class="bookmark-txt">Bookmark</span><span class="peek-bookmark"></span></span>
-                </div>
-                <p id="peek-overview">${program_peek}</p>
-                {{if career_options != '' }}
-                <div class="options-box">
-                    <h3>Career Options</h3>
-                    <div id="peek-career-options">
-                        <ul>
-                        {{each careerOptionsArray}}<li>${$value}</li>{{/each}}
-                        </ul>
-                    </div>
-                </div>
-                {{/if}}
-                <a class="peek-button" href="${program_url}">Visit Program Page</a>
-            </div>
-            <div id="peek-related" class="peek-related" style="display: none">
-                <h3 class="peek-subtitle">Programs related to</h3>
-                <h2 class="peek-title"><?php print $program_name; ?></h2>
-                <div class="peek-related-scroll">
-                    <div id="peek-related-programs" class="related-wrap">
-                    </div>
-                </div>
-                <div id="related-nav" class="related-nav" style="display: none">
-                    <a id="peek-nav-prev" class="peek-nav-button" ><img src="<?php echo $folder; ?>img/programs/peek-prev.png" /></a>
-                    <a id="peek-nav-next" class="peek-nav-button" ><img src="<?php echo $folder; ?>img/programs/peek-next.png" /></a>
-                </div>
-            </div>
-        </div>
-        <div id="subpeek-overlay" class="subpeek-overlay" style="display:none">
-        </div>
-    </script>
-
-    <script id="peek-related-programs-template" type="text/x-jQuery-tmpl">
-        <div class="related-single open-subpeek" data-index="${index}">
-            <div class="single-img">
-                {{if (thumbnail_small == '') }}
-                <img src="//www.messiah.edu/site/custom_scripts/images/default_thumbnail.png"/>
-                {{else}}
-                <img src="//www.messiah.edu/images/${thumbnail_small}"/>
-                {{/if}}
-            </div>
-            <div class="info">
-                <h4>${program_name}</h4>
-                {{if ((major == 'Yes') || (major == 'yes')) }}<span class="major"><span class="badge"></span></span>{{/if}}
-                {{if ((minor == 'Yes') || (minor == 'yes')) }}<span class="minor"><span class="badge"></span></span>{{/if}}
-                {{if ((concentration == 'Yes') || (concentration == 'yes')) }}<span class="concentration"><span class="badge"></span></span>{{/if}}
-                {{if ((preprofessional_programs == 'Yes') || (preprofessional_programs == 'yes')) }}<span class="prepro"><span class="badge"></span></span>{{/if}}
-                {{if ((allied_program == 'Yes') || (allied_program == 'yes')) }}<span class="dual-degree"><span class="badge"></span></span>{{/if}}
-                {{if ((teaching_certification == 'Yes') || (teaching_certification == 'yes')) }}<span class="teaching"><span class="badge"></span></span>{{/if}}
-                {{if ((grad_concentration == 'Yes') || (grad_concentration == 'yes')) }}<span class="grad-c"><span class="badge"></span></span>{{/if}}
-                {{if ((grad_track == 'Yes') || (grad_track == 'yes')) }}<span class="grad-t"><span class="badge"></span></span>{{/if}}
-                {{if ((grad_pa_teaching_certification == 'Yes') || (grad_pa_teaching_certification == 'yes')) }}<span class="grad-p"><span class="badge"></span></span>{{/if}}
-                {{if ((grad_grad_certificate == 'Yes') || (grad_grad_certificate == 'yes')) }}<span class="grad-g"><span class="badge"></span></span>{{/if}}
-                {{if ((grad_nondegree == 'Yes') || (grad_nondegree == 'yes')) }}<span class="grad-n"><span class="badge"></span></span>{{/if}}
-                {{if ((grad_certificate_in_advanced_graduate_studies == 'Yes') || (grad_certificate_in_advanced_graduate_studies == 'yes')) }}<span class="grad-a"><span class="badge"></span></span>{{/if}}
-            </div>
-            <div class="read-more">
-                <a>Read more</a>
-            </div>
-        </div>
-    </script>
 
     <script id="subpeek-template" type="text/x-jQuery-tmpl">
         <div class="subpeek">
@@ -1209,4 +1163,4 @@ window.onload = function() {
 
     <!-- jQuery Templates -->
     <script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.js"></script>
-    <script type="text/javascript" src="<?php echo $folder; ?>mc-programs.js?v=<?php echo $version; ?>"></script>
+    <script type="text/javascript" src="<?php echo $folder; ?>mc-programs-ug.js?v=<?php echo $version; ?>"></script>

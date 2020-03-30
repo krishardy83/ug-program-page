@@ -349,8 +349,8 @@ function display_courses($courses)
     <svg class="control-icon control-icon-close" width="24" height="24" role="presentation"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close" /></svg>
   </summary>
 </br>
-  <p><?php print $course_data->description;?></p>
   <p><?php print $course->subject_code;?> <?php print $course->number;?> / <?php print $course->credits;?> Credits</p>
+  <p><?php print $course_data->description;?></p>
 
 </details>
 <?php } ?>
