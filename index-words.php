@@ -15,7 +15,7 @@ require_once('directoryBuilder/JaduDirectoryUserEntryValues.php');
 
 require_once "bootstrap.php";
 # ###############################################
-# To Mimic A Home Page set the Jadu Homepage ID - Test Kris
+# To Mimic A Home Page set the Jadu Homepage ID - Test Kris - Test 2
 #
 $show_homepage_content_inside = true;
 
