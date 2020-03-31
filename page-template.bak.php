@@ -986,23 +986,23 @@ window.onload = function() {
                               </a>
                               <?php } ?>
                               <a href="https://www.messiah.edu/request-info" class="btn-blue btn-white">
-                                  <img src="/site/custom_scripts/styles/ug-program-page/images/program_page_images/request-info-icon.png" alt="request information icon" class ="request-icon" >
+                                  <img src="/a/ugrad-program-pages-dev/assets/images/program_page_images/request-info-icon.png" alt="request information icon" class ="request-icon" >
                                   <span> Request Info </span>
                               </a>
                               <a href="https://www.messiah.edu/applytoday" class ="btn-blue btn-white">
-                                  <img src = "/site/custom_scripts/styles/ug-program-page/images/program_page_images/apply-icon-white.png" alt="apply button icon" class ="apply-icon">
+                                  <img src = "/a/ugrad-program-pages-dev/assets/images/program_page_images/apply-icon-white.png" alt="apply button icon" class ="apply-icon">
                                   <span>Apply</span>
                               </a>
                               <a href = "#" class ="btn-white" >
-                                  <img src = "/site/custom_scripts/styles/ug-program-page/images/program_page_images/admission-requirements-icon.png" alt="admissions icon" class="admissions-icon" >
+                                  <img src = "/a/ugrad-program-pages-dev/assets/images/program_page_images/admission-requirements-icon.png" alt="admissions icon" class="admissions-icon" >
                                   <span > Admission Requirements </span >
                               </a>
                               <a href = "#" class ="btn-white" >
-                                  <img src = "/site/custom_scripts/styles/ug-program-page/images/program_page_images/tuition-icon-20.png" alt="tuition icon" class="tuition-icon" >
+                                  <img src = "/a/ugrad-program-pages-dev/assets/images/program_page_images/tuition-icon-20.png" alt="tuition icon" class="tuition-icon" >
                                   <span > Tuition </span>
                               </a>
                               <a href = "#" class ="btn-white" >
-                                  <img src = "/site/custom_scripts/styles/ug-program-page/images/program_page_images/scholarships-icon.png" alt="scholarships icon" class="scholarships-icon" >
+                                  <img src = "/a/ugrad-program-pages-dev/assets/images/program_page_images/scholarships-icon.png" alt="scholarships icon" class="scholarships-icon" >
                                   <span > Scholarships </span>
                               </a>
                           </div>
