@@ -334,7 +334,7 @@ function loadContent(evt, eventName, homepageId, headerName, headerText) {
                   html_data = data;
               }
 
-              $('.tabcontent-col-left').html(html_data);
+              $('#tabcontent-col-left').html(html_data);
 
               var acc = document.getElementsByClassName("acc");
 
@@ -378,7 +378,7 @@ function loadContent(evt, eventName, homepageId, headerName, headerText) {
 
             $('#gen-course-overview').show();
 
-            $('.tabcontent-col-left').html(html_data);
+            $('#tabcontent-col-left').html(html_data);
 
             var acc = document.getElementsByClassName("acc");
 
@@ -415,7 +415,7 @@ function loadContent(evt, eventName, homepageId, headerName, headerText) {
                 html_data = data;
             }
 
-            $('.tabcontent-col-left').html(html_data);
+            $('#tabcontent-col-left').html(html_data);
             $('#gen-course-overview').hide();
 
             var acc = document.getElementsByClassName("acc");
