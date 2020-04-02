@@ -608,7 +608,7 @@ window.onload = function() {
 </script>
 
 
-<?php require_once "related-programs-templates.php"; ?>
+<?php require_once "related-programs-header.php"; ?>
 <header class="header-img-container">
     <?php if (!empty($hero_image)) { ?>
         <img src="/images/<?php print $hero_image; ?>" alt="" />
