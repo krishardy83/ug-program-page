@@ -1,20 +1,10 @@
 @import url("https://www.messiah.edu/site/styles/standard.css");
-/* H1 degree title */
-.degree-type {
-    background: #ddd;
-    border: 1px solid #666;
-    border-radius: 5px;
-    display: inline-block;
-    font-size: .85em;
-    margin-left: 6px;
-    padding: 0 4px;
-    text-transform: uppercase;
-}
+
 
 /* Related Programs */
 
 .peek-related {
-	padding: 0 30px;
+	/*padding: 0 30px; Removed by Kris */
 	overflow: hidden;
   margin-top: 50px;
 }
@@ -1015,7 +1005,6 @@ h1.header-info__title{
 .info-panel .view-homepage-btn,
 .info-panel .meet-faculty-btn{
 	position: relative;
-	font-family: 'priori-sans', sans-serif !important;
 	font-style: normal;
 	display: block;
 	width: 100%;
@@ -1080,6 +1069,9 @@ h1.header-info__title{
 	transform: translate(0, -50%);
 	-ms-transform: translate(0, -50%);
 	-webkit-transform: translate(0, -50%);
+    font-family: 'priori-sans', sans-serif !important;
+
+
 }
 
 .info-panel .btn-upper-text{
@@ -1087,6 +1079,9 @@ h1.header-info__title{
 	font-weight: 400;
 	z-index: 50;
 	color: #fff;
+   	font-family: 'priori-sans', sans-serif !important;
+
+
 }
 
 .info-panel .btn-bottom-text{
@@ -1094,7 +1089,7 @@ h1.header-info__title{
 	font-size: 26px;
 	font-weight: 700;
 	text-transform: none;
-	color: #fff; 
+	color: #fff;
 }
 
 
@@ -1756,7 +1751,17 @@ a.blue-btn:focus {
 	}
 }
 
+/* H1 degree title */
 .degree-type-1 {
-  font: 18px/20px 'aptifer-sans', sans-serif !important;
-  padding: 4px 5px!important;
+    background: #ddd;
+    border: 1px solid #666;
+    border-radius: 5px;
+    display: inline-block;
+    font-size: .85em;
+    margin-left: 6px;
+    padding: 0 4px;
+    text-transform: uppercase;
+    color: #273d5e;
+  	font: 18px/20px 'aptifer-sans', sans-serif !important;
+  	padding: 4px 5px!important;
 }
