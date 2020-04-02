@@ -16,8 +16,8 @@
                     </div>
                 </div>
                 <div id="related-nav" class="related-nav" style="display: none">
-                    <a id="peek-nav-prev" class="peek-nav-button" ><img src="<?php echo $folder; ?>images/programs-ug/peek-prev.png" /></a>
-                    <a id="peek-nav-next" class="peek-nav-button" ><img src="<?php echo $folder; ?>images/programs-ug/peek-next.png" /></a>
+                    <a id="peek-nav-prev" class="peek-nav-button" ><img src="<?php echo $folder; ?>assets/images/programs-ug/peek-prev.png" /></a>
+                    <a id="peek-nav-next" class="peek-nav-button" ><img src="<?php echo $folder; ?>assets/images/programs-ug/peek-next.png" /></a>
                 </div>
             </div>
         </div>
