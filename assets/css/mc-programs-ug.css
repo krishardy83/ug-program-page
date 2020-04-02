@@ -638,7 +638,6 @@ button.read-more:hover {
 }
 
 .peek-related {
-    padding: 0 30px;
     overflow: hidden;
 }
 
@@ -774,7 +773,8 @@ button.read-more:hover {
     }
 
     .peek-related {
-        padding: 0 10px;
+/*        padding: 0 10px;
+*/
     }
 
     .peek-related-scroll {
