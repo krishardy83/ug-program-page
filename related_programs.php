@@ -82,7 +82,7 @@
                </div>
               </div>
               <div id="related-nav" class="related-nav" style="">
-                  <a id="peek-nav-prev" class="peek-nav-button" ><img src="<?php echo $folder; ?>img/programs/peek-prev.png" /></a>
+                  <a id="peek-nav-prev" class="peek-nav-button" ><img src="<?php echo $folder; ?>assets/images/programs-ug/peek-next.png" /></a>
                   <a id="peek-nav-next" class="peek-nav-button" ><img src="<?php echo $folder; ?>assets/img/programs/peek-next.png" /></a>
               </div>
                   </div>
@@ -188,7 +188,7 @@
                 </div>
             </div>
             <div id="related-nav" class="related-nav" style="display: none">
-                <a id="peek-nav-prev" class="peek-nav-button" ><img src="<?php echo $folder; ?>img/programs/peek-prev.png" /></a>
+                <a id="peek-nav-prev" class="peek-nav-button" ><img src="<?php echo $folder; ?>assets/images/programs-ug/peek-next.png" /></a>
                 <a id="peek-nav-next" class="peek-nav-button" ><img src="<?php echo $folder; ?>assets/img/programs/peek-next.png" /></a>
             </div>
         </div>
@@ -272,7 +272,7 @@
         </div>
         <div id="subpeek-related" class="peek-related" style="display: none">
             <div class="related-nav">
-                <a id="subpeek-nav-prev" class="peek-nav-button"><img src="<?php echo $folder; ?>img/programs/peek-prev.png"></a>
+                <a id="subpeek-nav-prev" class="peek-nav-button"><img src="<?php echo $folder; ?>assets/images/programs-ug/peek-next.png"></a>
                 <a id="subpeek-nav-next" class="peek-nav-button"><img src="<?php echo $folder; ?>assets/img/programs/peek-next.png"></a>
             </div>
         </div>
