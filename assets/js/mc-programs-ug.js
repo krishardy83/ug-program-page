@@ -31,6 +31,10 @@ $(document).ready(function(){
         peekNext();
     });
 
+    $(document).on('click', ".related-single", function(event) {
+      $(this).find('a').get(0).click();
+    });
+    
     function peekPrev() {
         var program = $("#peek-related-programs");
         var last = program.find(">:last-child");

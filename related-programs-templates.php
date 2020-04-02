@@ -10,7 +10,7 @@
     <script id="peek-template" type="text/x-jQuery-tmpl">
         <div class="_peek">
             <div id="peek-related" class="peek-related" style="display: none">
-                <h3 class="peek-subtitle">Programs related to</h3>
+                <h3 class="peek-subtitle">Programs related to ${entry_title}</h3>
                 <div class="peek-related-scroll">
                     <div id="peek-related-programs" class="related-wrap">
                     </div>
