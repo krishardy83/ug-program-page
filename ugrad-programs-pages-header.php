@@ -49,7 +49,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/site/includes/metadata.php';
 
 
 
-<link rel="stylesheet" type="text/css" href="/a/ugrad-program-pages-dev/assets/css/grad-program.css">
+<link rel="stylesheet" type="text/css" href="/a/ugrad-program-pages-dev/assets/css/ug-program.css">
 <link rel="stylesheet" type="text/css" href="/site/custom_scripts/styles/global.css">
 <link rel="stylesheet" type="text/css" href="/a/ugrad-program-pages-dev/assets/css/slick.css">
 <link type="text/css" rel="stylesheet" href="/site/custom_scripts/styles/outcomes.css"/>
