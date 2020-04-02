@@ -1371,7 +1371,6 @@ form, fieldset {
 }
 
 .peek-related {
-    padding: 0 30px;
     overflow: hidden;
 }
 
@@ -1501,7 +1500,8 @@ form, fieldset {
     }
 
     .peek-related {
-        padding: 0 10px;
+/*        padding: 0 10px;
+*/
     }
 
     .peek-related-scroll {
@@ -1913,4 +1913,3 @@ breaks Accounting and Compurer science list
 input[name='panel']:checked ~ .accordion__content {
     max-height: 180em;
 }
-
