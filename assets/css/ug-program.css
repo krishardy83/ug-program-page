@@ -1,4 +1,15 @@
 @import url("https://www.messiah.edu/site/styles/standard.css");
+/* H1 degree title */
+.degree-type {
+    background: #ddd;
+    border: 1px solid #666;
+    border-radius: 5px;
+    display: inline-block;
+    font-size: .85em;
+    margin-left: 6px;
+    padding: 0 4px;
+    text-transform: uppercase;
+}
 
 /* Related Programs */
 
@@ -1075,6 +1086,7 @@ h1.header-info__title{
 	font-size: 14px;
 	font-weight: 400;
 	z-index: 50;
+	color: #fff;
 }
 
 .info-panel .btn-bottom-text{
@@ -1082,6 +1094,7 @@ h1.header-info__title{
 	font-size: 26px;
 	font-weight: 700;
 	text-transform: none;
+	color: #fff; 
 }
 
 
