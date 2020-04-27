@@ -252,7 +252,7 @@
             </div>
 
             <div class="search-result-related">
-                <h3>Programs related to <span id="related-term"></span></h3>
+                <h3>Programs related to <span id="related-term"></span></h3><br>
                 <table id="search-related-table" class="program-table">
                      <thead>
                      </thead>
