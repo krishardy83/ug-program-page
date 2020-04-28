@@ -257,6 +257,9 @@ function loadContent(evt, eventName, homepageId, headerName, headerText) {
           $.get("/a/ugrad-program-pages/smart-catalog-v2-api-combined-02.php?guid=<?php print $smart_catalog_degree_id;?>&concentrationguid=<?php print $smart_catalog_concentrationtrack_id;?>", function (data, status) {
               $('.tabcontent').show();
               $('#why-content').hide();
+              $('._peek').hide();
+              $('#peek-related').hide();
+              $('#peek-overlay').hide();
               $('#courses_and_curriculum').show();
 
               if (headerText != '') {
