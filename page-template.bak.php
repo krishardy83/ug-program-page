@@ -1111,7 +1111,7 @@ window.onload = function() {
                 <a class="peek-button" href="${program_url}">Visit Program Page</a>
             </div>
             <div id="peek-related" class="peek-related" style="display: none">
-                <h3 class="peek-subtitle">Programs related to</h3><br>
+                <h3 class="peek-subtitle">Programs related to</h3>
                 <h2 class="peek-title"><?php print $program_name; ?></h2>
                 <div class="peek-related-scroll">
                     <div id="peek-related-programs" class="related-wrap">

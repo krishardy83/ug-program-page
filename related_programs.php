@@ -29,7 +29,7 @@
 <link type="text/css" rel="stylesheet" href="<?php echo $folder; ?>mc-programs.css?version=<?php echo $version; ?>"/>
 
 <div id="peek-related" class="peek-related" style="">
-  <h3 class="peek-subtitle">Programs related to</h3><br>
+  <h3 class="peek-subtitle">Programs related to</h3>
    <h2 class="peek-title"><?php print $program_name; ?></h2>
     <div class="peek-related-scroll">
       <div id="peek-related-programs" class="related-wrap"><div class="related-single open-subpeek" data-index="89">

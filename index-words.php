@@ -239,6 +239,7 @@ function loadContent(evt, eventName, homepageId, headerName, headerText) {
       if (eventName == 'smart-catalog') {
         $('.tabcontent-col-left').hide();
         $('._peek').hide();
+        $('#peek-related').hide();
         $('#peek-overlay').hide();
         $('#gen-course-overview').show();
         $('#courses_and_curriculum').show();
