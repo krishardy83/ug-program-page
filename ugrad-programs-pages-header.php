@@ -49,17 +49,17 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/site/includes/metadata.php';
 
 
 
-<link rel="stylesheet" type="text/css" href="/a/ugrad-program-pages-dev/assets/css/ug-program.css">
+<link rel="stylesheet" type="text/css" href="/a/ugrad-program-pages/assets/css/ug-program.css">
 <link rel="stylesheet" type="text/css" href="/site/custom_scripts/styles/global.css">
-<link rel="stylesheet" type="text/css" href="/a/ugrad-program-pages-dev/assets/css/slick.css">
+<link rel="stylesheet" type="text/css" href="/a/ugrad-program-pages/assets/css/slick.css">
 <link type="text/css" rel="stylesheet" href="/site/custom_scripts/styles/outcomes.css"/>
 <!-- <link type="text/css" rel="stylesheet" href="/site/custom_scripts/styles/outcomes.css?v=3"/> -->
 
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/site/includes/opening_javascript.php';
 ?>
-<script src="/a/ugrad-program-pages-dev/assets/js/slick.js"></script>
-<script src="/a/ugrad-program-pages-dev/assets/js/grad-program.js"></script>
+<script src="/a/ugrad-program-pages/assets/js/slick.js"></script>
+<script src="/a/ugrad-program-pages/assets/js/grad-program.js"></script>
 <script type="text/javascript" src="//fast.fonts.net/jsapi/72d06cb8-0c8f-4fd7-b671-80f4e1989ebc.js"></script>
 <script type="text/javascript" src="/site/javascript/waypoints.min.js"></script>
 

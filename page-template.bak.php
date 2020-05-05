@@ -968,41 +968,43 @@ window.onload = function() {
                       <div class="form-col-right">
                           <div class="info-panel">
                             <?php if(!empty($department_url)){?>
-                              <a href="<?php print $department_url; ?>" class="view-homepage-btn overlay-color">
+                              <a href="<?php print $department_url; ?>" target="_blank" class="view-homepage-btn overlay-color">
                                   <p class="btn-upper-text">Department of
                                   <span class="btn-bottom-text"><?php print $department_name; ?></span></p>
                               </a>
                               <?php } ?>
                               <?php if(!empty($meet_the_faculty_url)){?>
-                              <a href="<?php print $meet_the_faculty_url; ?>" class="meet-faculty-btn overlay-color">
+                              <a href="<?php print $meet_the_faculty_url; ?>" target="_blank" class="meet-faculty-btn overlay-color">
                                   <p class="btn-upper-text">meet the
                                   <span class="btn-bottom-text">Faculty</span></p>
                               </a>
                               <?php } ?>
                               <?php if(!empty($view_our_facilities_url)){?>
-                               <a href="<?php print $view_our_facilities_url; ?>" class="view-homepage-btn overlay-color ">
+                               <a href="<?php print $view_our_facilities_url; ?>" target="_blank" class="view-homepage-btn overlay-color ">
                                   <p class="btn-upper-text">View our
                                   <span class="btn-bottom-text">Facilities</span></p>
                               </a>
                               <?php } ?>
-                              <a href="https://www.messiah.edu/request-info" class="btn-blue btn-white">
-                                  <img src="/a/ugrad-program-pages-dev/assets/images/program_page_images/request-info-icon.png" alt="request information icon" class ="request-icon" >
+                              <a href="https://www.messiah.edu/request-info" target="_blank" class="btn-blue btn-white">
+                                  <img src="/a/ugrad-program-pages/assets/images/program_page_images/request-info-icon.png" alt="request information icon" class ="request-icon" >
                                   <span> Request Info </span>
                               </a>
-                              <a href="https://www.messiah.edu/applytoday" class ="btn-blue btn-white">
-                                  <img src = "/a/ugrad-program-pages-dev/assets/images/program_page_images/apply-icon-white.png" alt="apply button icon" class ="apply-icon">
+                              <a href="https://www.messiah.edu/applytoday" target="_blank" class="btn-blue btn-white">
+                                  <img src = "/a/ugrad-program-pages/assets/images/program_page_images/apply-icon-white.png" alt="apply button icon" class ="apply-icon">
                                   <span>Apply</span>
                               </a>
-                              <a href = "#" class ="btn-white" >
-                                  <img src = "/a/ugrad-program-pages-dev/assets/images/program_page_images/admission-requirements-icon.png" alt="admissions icon" class="admissions-icon" >
+                              <?php if(!empty($admission_requirements)){?>
+                              <a href = "<?php print $admission_requirements; ?>" target="_blank" class="btn-white" >
+                                  <img src = "/a/ugrad-program-pages/assets/images/program_page_images/admission-requirements-icon.png" alt="admissions icon" class="admissions-icon" >
                                   <span > Admission Requirements </span >
                               </a>
-                              <a href = "#" class ="btn-white" >
-                                  <img src = "/a/ugrad-program-pages-dev/assets/images/program_page_images/tuition-icon-20.png" alt="tuition icon" class="tuition-icon" >
+                              <?php } ?>
+                              <a href = "https://www.messiah.edu/info/21344/tuition_and_aid" target="_blank" class ="btn-white" >
+                                  <img src = "/a/ugrad-program-pages/assets/images/program_page_images/tuition-icon-20.png" alt="tuition icon" class="tuition-icon" >
                                   <span > Tuition </span>
                               </a>
-                              <a href = "#" class ="btn-white" >
-                                  <img src = "/a/ugrad-program-pages-dev/assets/images/program_page_images/scholarships-icon.png" alt="scholarships icon" class="scholarships-icon" >
+                              <a href = "http://www.messiah.edu/info/21379/types_of_aid" target="_blank" class ="btn-white" >
+                                  <img src = "/a/ugrad-program-pages/assets/images/program_page_images/scholarships-icon.png" alt="scholarships icon" class="scholarships-icon" >
                                   <span > Scholarships </span>
                               </a>
                           </div>
