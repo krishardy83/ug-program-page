@@ -935,6 +935,7 @@ window.onload = function() {
                                      lives of others through your chosen career
                                       path.</p>
 
+
                                 <p><a class="button" href="<?php print $dept_alumni_link;?>" target="_blank">Meet Alumni from the <?php print $department_name;?></a></p>
 
                                     </div>
@@ -947,12 +948,15 @@ window.onload = function() {
                             <!-- TAB: OVERVIEW -->
                             <div class="tabcontent-col-left">
                                     [Dynamic Content Here]
+
                             </div>
 
                             <!-- WHY MESSIAH -->
                             <div class="tabcontent-col-why" id="why-content" style="position:relative">
-                              <?php print $why_messiah_tab_content . "test"; ?>
+                              <?php print $why_messiah_tab_content ; ?>
                           </div>
+
+
 
 
                             <!-- RELATED PROGRAMS -->
