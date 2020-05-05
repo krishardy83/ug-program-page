@@ -950,7 +950,7 @@ window.onload = function() {
                               <?php require_once "related-programs-overlay.php"; ?>
 
                             <!-- WHY MESSIAH -->
-                            <div class="tabcontent-col-why" id="why-content" style="display:none; position:relative">
+                            <div class="tabcontent-col-why" id="why-content" style="position:relative">
                               <?php print $why_messiah_tab_content . "test"; ?>
                           </div>
 
