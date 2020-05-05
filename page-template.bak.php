@@ -951,7 +951,7 @@ window.onload = function() {
 
                             <!-- WHY MESSIAH -->
                             <div class="tabcontent-col-why" id="why-content" style="display:none; position:relative">
-                              <?php print $why_messiah_tab_content; ?>
+                              <?php print $why_messiah_tab_content . "test"; ?>
                           </div>
 
 
