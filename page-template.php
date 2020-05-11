@@ -1,7 +1,7 @@
 <?php
 
 // ALUMNI OUTCOMES Widget
-$param_text = "% of the Class of 2018 respondents were employed or in graduate school within 6-9 months of graduation.";
+$param_text = "% of the Class of 2019 respondents were employed or in graduate school within 6-9 months of graduation.";
 $param_percentage = 100;
 
 # if (!class_exists('MessiahDirectoryCategoryHelper')) {
@@ -900,21 +900,21 @@ window.onload = function() {
 
                                   <!-- PERCENTAGE STATISTICS WIDGET -->
                                   <div class="statistics-hold">
-                  	<div class="statistics-block">
-                  		<span class="img-hold">
-                  			<img src="/site/images/grad_stats_background.jpg" alt="image desxcription" width="832" height="317">
-                  		</span>
-                  		<div class="stats-text">
-                  			<p><?php print $param_percentage;?><?php print $param_text;?></p>
-                  			<?php if (!empty($param_url)) { ?>
-                  			<?php } ?>
-                  		</div>
-                  		<div class="statistics-circle">
-                  			<span><span class="value"><?php print $param_percentage;?></span>%</span>
-                  			<div angle-data="[[34, 2, 0], [360, 2, 10]]" start-data="[[0, 2, 0], [34, 2, 10]]" color-data='["#ffffff", "#00FFFFFF"]' percent-data="<?php print $param_percentage;?>"></div>
-                  		</div>
-                  	</div>
-                  </div>
+                                  <div class="statistics-block">
+                                    <span class="img-hold">
+                                      <img src="/site/images/grad_stats_background.jpg" alt="image desxcription" width="832" height="317">
+                                    </span>
+                                    <div class="stats-text">
+                                      <p><?php print $param_percentage;?><?php print $param_text;?></p>
+                                      <?php if (!empty($param_url)) { ?>
+                                      <?php } ?>
+                                    </div>
+                                    <div class="statistics-circle">
+                                      <span><span class="value"><?php print $param_percentage;?></span>%</span>
+                			<div class="circle-box" id="chart" angle-data="[[34, 2, 0], [360, 2, 10]]" start-data="[[0, 2, 0], [34, 2, 10]]" color-data='["#ffffff", "#6697B8"]' percent-data="<?php print $param_percentage;?>"></div>
+                                    </div>
+                                  </div>
+                                </div>
 
                               </br>
 
