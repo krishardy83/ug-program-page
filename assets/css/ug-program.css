@@ -1,5 +1,10 @@
 @import url("https://www.messiah.edu/site/styles/standard.css");
 
+/* Courses Tab */
+.sc-ListNumber {
+	margin-bottom: 20px; 
+}
+
 
 /* Related Programs */
 
