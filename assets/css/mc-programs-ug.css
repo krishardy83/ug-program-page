@@ -12,7 +12,7 @@ form, fieldset {
 
 .major1 .badge {
     background: #fff;
-    color: #273d5e;
+    color: #273d5e!important;
 }
 
 .minor .badge {
