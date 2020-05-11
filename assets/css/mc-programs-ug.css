@@ -127,7 +127,8 @@ form, fieldset {
     content: "A";
 }
 
-.major ..major1 .badge,
+.major .badge,
+.major1 .badge,
 .minor .badge,
 .concentration .badge,
 .prepro .badge,
@@ -419,7 +420,8 @@ button.read-more:hover {
         content: "Certificate in Advanced Graduate Studies";
     }
 
-    .major .major1 .badge,
+    .major .badge,
+    .major1 .badge,
     .minor .badge,
     .concentration .badge,
     .prepro .badge,
