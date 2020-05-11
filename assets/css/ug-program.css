@@ -1863,7 +1863,7 @@ a.blue-btn:focus {
   -webkit-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);
-  font: 85px/87px 'MyriadProRegular', Arial, Helvetica, sans-serif;
+  font: 75px/77px 'MyriadProRegular', Arial, Helvetica, sans-serif;
   text-align: center;
   padding: 80px 0 0;
   box-sizing: border-box;
@@ -1955,4 +1955,3 @@ a.blue-btn:focus {
       .circle-box svg {
         width: 210px;
         height: 210px; } }
-				
