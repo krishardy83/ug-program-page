@@ -2,7 +2,7 @@
 
 /* Courses Tab */
 .sc-ListNumber {
-	margin-bottom: 20px!important; 
+	margin-bottom: 20px!important;
 }
 
 
@@ -1757,8 +1757,7 @@ a.blue-btn:focus {
 
 /* H1 degree title */
 .degree-type-1 {
-    background: #ddd;
-    border: 1px solid #666;
+    background: #ffffff;
     border-radius: 5px;
     display: inline-block;
     font-size: .85em;
