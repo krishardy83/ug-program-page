@@ -911,7 +911,7 @@ window.onload = function() {
                                     </div>
                                     <div class="statistics-circle">
                                       <span><span class="value"><?php print $param_percentage;?></span>%</span>
-                			<div class="circle-box" id="chart" angle-data="[[34, 2, 0], [360, 2, 10]]" start-data="[[0, 2, 0], [34, 2, 10]]" color-data='["#ffffff", "#6697B8"]' percent-data="<?php print $param_percentage;?>"></div>
+                			<div class="" id="chart" angle-data="[[34, 2, 0], [360, 2, 10]]" start-data="[[0, 2, 0], [34, 2, 10]]" color-data='["#ffffff", "#6697B8"]' percent-data="<?php print $param_percentage;?>"></div>
                                     </div>
                                   </div>
                                 </div>
