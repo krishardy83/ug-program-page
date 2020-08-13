@@ -327,10 +327,11 @@ function loadContent(evt, eventName, homepageId, headerName, headerText) {
         $('#career_and_outcomes').show();
         $('#gen-content').hide();
         $('#courses_and_curriculum').hide();
-
+        if (!$('#chart').hasClass("circle-box")) {
+          $('#chart').addClass("circle-box");
+          initFadeBlock();
+        }
       }
-
-
       else {
 
           $.get("/a/mcsquare/?" + homepageId, function (data, status) {

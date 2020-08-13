@@ -52,9 +52,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/site/includes/metadata.php';
 <link rel="stylesheet" type="text/css" href="/a/ugrad-program-pages/assets/css/ug-program.css">
 <link rel="stylesheet" type="text/css" href="/site/custom_scripts/styles/global.css">
 <link rel="stylesheet" type="text/css" href="/a/ugrad-program-pages/assets/css/slick.css">
-<link type="text/css" rel="stylesheet" href="/site/custom_scripts/styles/outcomes.css"/>
-<!-- <link type="text/css" rel="stylesheet" href="/site/custom_scripts/styles/outcomes.css?v=3"/> -->
-
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/site/includes/opening_javascript.php';
 ?>

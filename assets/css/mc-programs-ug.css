@@ -10,6 +10,11 @@ form, fieldset {
     background: #273d5e;
 }
 
+.major1 .badge {
+    background: #fff;
+    color: #273d5e!important;
+}
+
 .minor .badge {
     background: #4d87a9;
 }
@@ -66,6 +71,10 @@ form, fieldset {
     content: "M";
 }
 
+.major1 .badge:before {
+    content: "M";
+}
+
 .minor .badge:before {
     content: "m";
 }
@@ -119,6 +128,7 @@ form, fieldset {
 }
 
 .major .badge,
+.major1 .badge,
 .minor .badge,
 .concentration .badge,
 .prepro .badge,
@@ -354,6 +364,10 @@ button.read-more:hover {
         content: "Major";
     }
 
+    .major1 .badge:before {
+        content: "Major";
+    }
+
     .minor .badge:before {
         content: "Minor";
     }
@@ -407,6 +421,7 @@ button.read-more:hover {
     }
 
     .major .badge,
+    .major1 .badge,
     .minor .badge,
     .concentration .badge,
     .prepro .badge,
@@ -717,7 +732,7 @@ button.read-more:hover {
     font-style: normal;
     font-size: 16px;
     line-height: 22px;
-    color: #7e7e7e;    
+    color: #7e7e7e;
 }
 
 .related-single .read-more {
