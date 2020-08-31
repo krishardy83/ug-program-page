@@ -309,6 +309,11 @@ function loadContent(evt, eventName, homepageId, headerName, headerText) {
         $('#courses_and_curriculum').hide();
       }
 
+      else if(eventName=='courses'){
+        $('#peek-overlay').hide();
+
+      }
+
       else if(eventName=='apply'){
         $('#gen-content').hide();
         $('#learning_by_doing_tab').show();
@@ -362,10 +367,15 @@ function loadContent(evt, eventName, homepageId, headerName, headerText) {
       }
   }
 
+
+
   function loadContent1(evt, eventName, homepageId, headerName, headerText) {
+    $('#gen-content').hide();
     $('.tab-btn').removeClass('active');
     $('.'+eventName+'-btn').addClass('active');
     $('#gen-course-overview').hide();
+    $('.tabcontent-col-left-list').hide();
+    $('#gen-content').hide();
     $('#learning_by_doing_tab').hide();
     $('#learning_by_doing').hide();
     $('#why-content').hide();
@@ -375,19 +385,45 @@ function loadContent(evt, eventName, homepageId, headerName, headerText) {
     $('#courses_and_curriculum').hide();
 
     if (eventName == 'smart-catalog') {
-        $.get("/a/ugrad-program-pages/smart-catalog-v2-api-combined-01-Mixed.php?guid=<?php print $smart_catalog_degree_id;?>&concentrationguid=<?php print $smart_catalog_concentrationtrack_id;?>", function (data, status) {
+      $('.tabcontent-col-left').hide();
+      // $('._peek').hide();
+      // $('#peek-related').hide();
+      // $('#peek-overlay').hide();
+      $('#gen-course-overview').show();
+      $('#courses_and_curriculum').show();
 
+
+      var course_overview = <?php echo json_encode($course_overview, JSON_HEX_TAG); ?>;
+
+      if(course_overview !== null && course_overview !== '') {
+        $('#gen-content').hide();
+      } else{
+        $('#gen-content').show();
+      }
+      $('.tabcontent-col-left-list').show();
+
+      $.get("/a/ugrad-program-pages/smart-catalog-v2-api-combined-01-Mixed.php?guid=<?php print $smart_catalog_degree_id;?>&concentrationguid=<?php print $smart_catalog_concentrationtrack_id;?>", function (data, status) {
             $('.tabcontent').show();
+            $('#why-content').hide();
+            // $('._peek').hide();
+            // $('#peek-related').hide();
+            // $('#peek-overlay').hide();
+            $('#courses_and_curriculum').show();
 
             if (headerText != '') {
-                html_data = data;
+                html_datax = data;
             } else {
-                html_data = data;
+                html_datax = data;
             }
 
-            $('#gen-course-overview').show();
+            // Load smart_catalog__core_courses
 
-            $('#tabcontent-col-left').html(html_data);
+            if (loaded == true){
+            $('.tabcontent-col-left-list').html(html_datax);
+          } else {
+            // Do nothing?
+
+          }
 
             var acc = document.getElementsByClassName("acc");
 
@@ -408,12 +444,47 @@ function loadContent(evt, eventName, homepageId, headerName, headerText) {
                         $("#course-"+guid).html(data);
                     });
                 });
-
-
             }
         });
+    }
 
-    } else {
+    else if(eventName=='why-messiah'){
+      $('#why-content').show();
+      $('.tabcontent-col-left').hide();
+      $('#career_and_outcomes').hide();
+      $('#gen-content').hide();
+      $('#courses_and_curriculum').hide();
+    }
+
+    else if(eventName=='courses'){
+      $('#peek-overlay').hide();
+
+    }
+
+    else if(eventName=='apply'){
+      $('#gen-content').hide();
+      $('#learning_by_doing_tab').show();
+      $('#learning_by_doing').show();
+      $('.tabcontent-col-left').hide();
+      $('#career_and_outcomes').hide();
+      $('#courses_and_curriculum').hide();
+
+    }
+
+    else if(eventName=='tuition'){
+      $('.tabcontent-col-left').hide();
+      $('#learning_by_doing_tab').hide();
+      $('#learning_by_doing').hide();
+      $('#why-content').hide();
+      $('#career_and_outcomes').show();
+      $('#gen-content').hide();
+      $('#courses_and_curriculum').hide();
+      if (!$('#chart').hasClass("circle-box")) {
+        $('#chart').addClass("circle-box");
+        initFadeBlock();
+      }
+    }
+    else {
 
         $.get("/a/mcsquare/?" + homepageId, function (data, status) {
             $('.tabcontent').show();
@@ -425,7 +496,6 @@ function loadContent(evt, eventName, homepageId, headerName, headerText) {
             }
 
             $('#tabcontent-col-left').html(html_data);
-            $('#gen-course-overview').hide();
 
             var acc = document.getElementsByClassName("acc");
 

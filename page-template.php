@@ -935,7 +935,7 @@ window.onload = function() {
 
                                 <p>
 
-                                  <?php if (!empty($department_name)) { ?>
+                                  <?php if (!empty($dept_alumni_link)) { ?>
                                   <a class="button" href="<?php print $dept_alumni_link;?>" target="_blank">Meet Alumni from the <?php print $department_name;?></a>
                                 <?php } ?>
 
